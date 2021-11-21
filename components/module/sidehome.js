@@ -1,7 +1,6 @@
 import Link from "next/link";
 import React from "react";
-import Image from "next/image";
-import device from "/public/assets/device.png";
+
 import {
   faArrowUp,
   faGripHorizontal,
@@ -11,7 +10,7 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
-export default function Auth() {
+export default function Sidehome() {
   const deviceImage = {
     width: "30rem",
     marginLeft: "100px",
@@ -26,7 +25,7 @@ export default function Auth() {
             <i>
               <FontAwesomeIcon icon={faGripHorizontal} />
             </i>
-            <Link href="/">Dashboard</Link>
+            <Link href="/main/home">Dashboard</Link>
           </li>
           <li className="list-group-item">
             <i>
@@ -44,7 +43,7 @@ export default function Auth() {
             <i>
               <FontAwesomeIcon icon={faUser} />
             </i>
-            <Link href="/">Profile</Link>
+            <Link href="/main/profile-user">Profile</Link>
           </li>
           <li className="list-group-item">
             <i>

@@ -1,0 +1,14 @@
+.borderprofile {
+  background-color: white;
+  border-radius: 20px;
+  padding: 30px;
+}
+
+li {
+  margin-bottom: 20px;
+}
+
+.personalinfo ul li {
+  border: solid 2px #f2f3f5 !important;
+  background-color: #f3f3f5;
+}
