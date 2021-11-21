@@ -1,3 +1,14 @@
+@import url(./components/auth.css);
+@import url(./components/formlogin.css);
+@import url(./components/navbar.css);
+@import url(./components/sidehome.css);
+@import url(./components/footer.css);
+
+/*=========================================================*/
+@import url(./pages/signin.css);
+@import url(./pages/home.css);
+@import url(./pages/history.css);
+
 html,
 body {
   padding: 0;
@@ -11,6 +22,6 @@ a {
   text-decoration: none;
 }
 
-* {
+/* * {
   box-sizing: border-box;
-}
+} */

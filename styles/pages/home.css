@@ -1,0 +1,36 @@
+body {
+  background-color: #e5e7eb !important;
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+}
+
+.content {
+  margin-top: 40px !important;
+}
+
+.borderbox {
+  background-color: #6379f4;
+  border-radius: 20px;
+  padding: 30px;
+}
+
+.barballance button {
+  width: 150px;
+  margin-bottom: 20px;
+}
+
+.borderbox p,
+h1 {
+  color: white !important;
+}
+
+.borderchart {
+  background-color: white;
+  border-radius: 20px;
+  padding: 20px;
+}
+
+.user p {
+  font-size: 12px;
+  margin-top: 0;
+}
