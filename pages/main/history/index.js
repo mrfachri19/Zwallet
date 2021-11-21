@@ -39,7 +39,7 @@ export default function History(props) {
   // console.log(props);
 
   return (
-    <Layout title="Home">
+    <Layout title="History">
       <Navbar />
       <div className="container">
         <div className="row content">

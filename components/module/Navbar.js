@@ -6,19 +6,28 @@ import user from "/public/assets/user.png";
 import { faBell } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import axios from "utils/axios";
+import { useSelector, useDispatch } from "react-redux";
+import cookie from "js-cookie";
 
 export default function Navbar(props) {
-  const [data, setData] = useState([]);
+  // Client Side Rendering
+  const userState = useSelector((state) => state.user);
+  const dispatch = useDispatch();
+
+  const [userProfile, setUserProfile] = useState({});
 
   useEffect(() => {
-    getDataUser();
+    // dispatch(getUserById(userState.userProfile.id)).then((res) => {
+    //   // console.log(res);
+    // });
+    getUserProfile();
   }, []);
-
-  const getDataUser = () => {
+  const getUserProfile = () => {
     axios
-      .get("/user?page=1&limit=2&search=&sort=")
+      .get(`/user/profile/${cookie.get("id")}`)
       .then((res) => {
-        setData(res.data.data);
+        console.log(res);
+        setUserProfile(res.data.data);
       })
       .catch((err) => {
         console.log(err.response);
@@ -42,16 +51,13 @@ export default function Navbar(props) {
             <div className="col">
               <li className="nav-item">
                 <div className="name">
-                  {data.map((item) => (
-                    <div key={item.id}>
-                      <h6>
-                        {item.firstName}
-                        {item.lastName}
-                      </h6>
-                    </div>
-                  ))}
+                  <h6>
+                    {userProfile.firstName} {userProfile.lastName}
+                  </h6>
                 </div>
-                <div className="number">+62 890989</div>
+                <div className="number">
+                  <h6>{userProfile.noTelp}</h6>
+                </div>
               </li>
             </div>
             <li className="nav-item">

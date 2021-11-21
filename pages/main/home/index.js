@@ -106,7 +106,7 @@ export default function Home(props) {
           </div>
           <div className="col-sm-9">
             <div className="row">
-              <div className="borderbox">
+              <div className="borderballance">
                 <div className="row">
                   <div className="col-sm-9">
                     <div className="row">
@@ -116,7 +116,7 @@ export default function Home(props) {
                       <h1>{userProfile.balance}</h1>
                     </div>
                     <div className="row">
-                      <p>+62 8908767</p>
+                      <p>{userProfile.noTelp}</p>
                     </div>
                   </div>
                   <div className="col-sm-3 barballance">
