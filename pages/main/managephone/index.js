@@ -2,13 +2,15 @@ import React, { useState, useEffect } from "react";
 import Navbar from "components/module/Navbar";
 import Sidehome from "components/module/sidehome";
 import Layout from "components/Layout";
+import Footer from "components/module/Footer";
+import bin from "public/assets/bin.png";
+import Image from "next/dist/client/image";
+import { useRouter } from "next/router";
 import axios from "utils/axios";
 import cookie from "js-cookie";
 import { useSelector, useDispatch } from "react-redux";
-import Footer from "components/module/Footer";
-import Link from "next/link";
 
-export default function PersonalInfo(props) {
+export default function ManagePhone(props) {
   // Client Side Rendering
   const userState = useSelector((state) => state.user);
   const dispatch = useDispatch();
@@ -32,10 +34,10 @@ export default function PersonalInfo(props) {
         console.log(err.response);
       });
   };
-
-  // =========
-  // Server Side Rendering
-  // console.log(props);
+  const router = useRouter();
+  const handleClickPhone = () => {
+    router.push("/main/addphone");
+  };
 
   return (
     <Layout title="Profile">
@@ -60,19 +62,6 @@ export default function PersonalInfo(props) {
                   <div className="personalinfo">
                     <ul className="list-group pt-20">
                       <li className="list-group-item">
-                        <h6>First Name </h6>
-                        <p>{userProfile.firstName}</p>
-                      </li>
-                      <li className="list-group-item">
-                        <h6>Last Name </h6>
-                        <p>{userProfile.lastName}</p>
-                      </li>
-                      <li className="list-group-item">
-                        <h6> Verified E-mail </h6>
-                        <p>{userProfile.email}</p>
-                      </li>
-
-                      <li className="list-group-item">
                         <h6>Phone Number</h6>
                         <div className="row">
                           <div className="col-sm-10">
@@ -80,7 +69,13 @@ export default function PersonalInfo(props) {
                           </div>
                           <div className="col-sm-2">
                             <p>
-                              <Link href="/main/managephone">Manage</Link>
+                              <button
+                                type="button"
+                                className="btn"
+                                onClick={handleClickPhone}
+                              >
+                                <Image src={bin} alt="bin"></Image>
+                              </button>
                             </p>
                           </div>
                         </div>

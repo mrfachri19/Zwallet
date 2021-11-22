@@ -42,6 +42,12 @@ export default function Profile(props) {
   const handleClickProfile = () => {
     router.push("/main/personal-info");
   };
+  const handleClickProfile2 = () => {
+    router.push("/main/changepassword");
+  };
+  const handleClickProfile3 = () => {
+    router.push("/main/changepin");
+  };
 
   // =========
   // Server Side Rendering
@@ -103,6 +109,7 @@ export default function Profile(props) {
                       <button
                         type="button"
                         className="list-group-item list-group-item-action "
+                        onClick={handleClickProfile2}
                       >
                         <div className="row">
                           <div className="col-sm-11">Change Password</div>
@@ -116,6 +123,7 @@ export default function Profile(props) {
                       <button
                         type="button"
                         className="list-group-item list-group-item-action "
+                        onClick={handleClickProfile3}
                       >
                         <div className="row">
                           <div className="col-sm-11">Change Pin</div>
@@ -131,7 +139,7 @@ export default function Profile(props) {
                         className="list-group-item list-group-item-action "
                       >
                         <div className="row">
-                          <div className="col-sm-11">LogOut</div>
+                          <div className="col-sm-11">Logout</div>
                         </div>
                       </button>
                     </ul>

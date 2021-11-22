@@ -3,6 +3,7 @@
 @import url(./components/navbar.css);
 @import url(./components/sidehome.css);
 @import url(./components/footer.css);
+@import url(./components/createpin.css);
 
 /*=========================================================*/
 @import url(./pages/signin.css);
@@ -10,6 +11,7 @@
 @import url(./pages/history.css);
 @import url(./pages/profile-user.css);
 @import url(./pages/personal-info.css);
+@import url(./pages/changepin.css);
 
 html,
 body {

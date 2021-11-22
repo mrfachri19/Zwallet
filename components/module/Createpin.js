@@ -6,10 +6,13 @@ import { useRouter } from "next/router";
 
 const inputStyle = {
   width: "30px",
+  borderRadius: "2px",
+  border: "1px solid rgba(169, 169, 169, 0.6)",
+  boxShadow: "0px 10px 75px rgba(147, 147, 147, 0.1)",
 };
 
 const inputContainer = {
-  width: "25%",
+  width: "50%",
   margin: "auto",
 };
 
@@ -51,8 +54,8 @@ export default function CreatePin() {
     <>
       <div className="mt-3">
         <div style={inputContainer}>
-          <div className="row">
-            <div className="col-2">
+          <div className="row pin">
+            <div className="col-sm-2 pin">
               <input
                 style={inputStyle}
                 maxLength="1"
@@ -61,7 +64,7 @@ export default function CreatePin() {
                 id="pin-1"
               />
             </div>
-            <div className="col-2">
+            <div className="col-sm-2 pin">
               <input
                 style={inputStyle}
                 maxLength="1"
@@ -70,7 +73,7 @@ export default function CreatePin() {
                 id="pin-2"
               />
             </div>
-            <div className="col-2">
+            <div className="col-sm-2 pin">
               <input
                 style={inputStyle}
                 maxLength="1"
@@ -79,7 +82,7 @@ export default function CreatePin() {
                 id="pin-3"
               />
             </div>
-            <div className="col-2">
+            <div className="col-sm-2 pin">
               <input
                 style={inputStyle}
                 maxLength="1"
@@ -88,7 +91,7 @@ export default function CreatePin() {
                 id="pin-4"
               />
             </div>
-            <div className="col-2">
+            <div className="col-sm-2 pin">
               <input
                 style={inputStyle}
                 maxLength="1"
@@ -97,7 +100,7 @@ export default function CreatePin() {
                 id="pin-5"
               />
             </div>
-            <div className="col-2">
+            <div className="col-sm-2 pin">
               <input
                 style={inputStyle}
                 maxLength="1"
