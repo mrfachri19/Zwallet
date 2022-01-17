@@ -1,19 +1,16 @@
-import React from "react";
-
 export default function Footer() {
   return (
-    <div className="footer">
-      <div className="container">
-        <div className="row">
-          <div className="col-sm-8">
-            <p>2020 Zwallet. All right reserved</p>
+    <div className="color-primary">
+      <div
+        className="container d-flex justify-content-between"
+        style={{ padding: "20px 0px", color: "white" }}
+      >
+        <div className="nunito-400">2020 Zwallet. All right reserved.</div>
+        <div className="d-flex justify-content-between flex-md-row flex-column">
+          <div className="nunito-400" style={{ marginRight: "40px" }}>
+            +6289890987
           </div>
-          <div className="col-sm-2">
-            <p>+62 89099856</p>
-          </div>
-          <div className="col-sm-2">
-            <p>zwalletfachri@gmail.com</p>
-          </div>
+          <div className="nunito-400">pay.Zwallet@gmail.com</div>
         </div>
       </div>
     </div>

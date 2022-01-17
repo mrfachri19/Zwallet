@@ -1,44 +1,142 @@
 const initialState = {
-  userProfile: {},
-  users: [],
+  data: {},
   isLoading: false,
   isError: false,
-  message: "",
-  pageInfo: {},
+  msg: "",
 };
 
-export default function user(state = initialState, action) {
+const user = (state = initialState, action) => {
   switch (action.type) {
-    // GET_USER_BY_ID
-    case "GET_USER_BY_ID_PENDING": {
+    // GET USER PROFILE
+    case "GET_USER_PROFILE_PENDING":
+      return {
+        ...state,
+        data: "",
+        isLoading: true,
+        isError: false,
+        msg: "",
+      };
+    case "GET_USER_PROFILE_FULFILLED":
+      return {
+        ...state,
+        data: action.payload.data.data,
+        isLoading: false,
+        isError: false,
+        msg: action.payload.data.msg,
+      };
+    case "GET_USER_PROFILE_REJECTED":
+      return {
+        ...state,
+        isLoading: false,
+        isError: true,
+        data: "",
+        msg: action.payload.response.data.msg,
+      };
+
+    // UPDATE USER PROFILE
+    case "UPDATE_USER_PROFILE_PENDING":
       return {
         ...state,
         isLoading: true,
         isError: false,
-        users: [],
-        // message: action.payload.data.msg
+        msg: "",
       };
-    }
-    case "GET_USER_BY_ID_FULFILLED": {
+
+    case "UPDATE_USER_PROFILE_FULFILLED":
       return {
         ...state,
         isLoading: false,
         isError: false,
-        users: action.payload.data.data[0],
-        message: action.payload.data.msg,
+        msg: action.payload.data.msg,
       };
-    }
-    case "GET_USER_BY_ID_REJECTED": {
+
+    case "UPDATE_USER_PROFILE_REJECTED":
+      return {
+        ...state,
+        isLoading: false,
+        isError: true,
+        msg: action.payload.response.data.msg,
+      };
+
+    // UPDATE USER IMAGE
+    case "UPDATE_USER_IMAGE_PENDING":
       return {
         ...state,
         isLoading: true,
-        isError: true,
-        users: [],
-        message: action.payload.response.data.msg,
+        isError: false,
+        msg: "",
       };
-    }
+
+    case "UPDATE_USER_IMAGE_FULFILLED":
+      return {
+        ...state,
+        isLoading: false,
+        isError: false,
+        msg: action.payload.data.msg,
+      };
+
+    case "UPDATE_USER_IMAGE_REJECTED":
+      return {
+        ...state,
+        isLoading: false,
+        isError: true,
+        msg: action.payload.response.data.msg,
+      };
+
+    // DELETE USER IMAGE
+    case "DELETE_USER_IMAGE_PENDING":
+      return {
+        ...state,
+        isLoading: true,
+        isError: false,
+        msg: "",
+      };
+
+    case "DELETE_USER_IMAGE_FULFILLED":
+      return {
+        ...state,
+        isLoading: false,
+        isError: false,
+        msg: action.payload.data.msg,
+      };
+
+    case "DELETE_USER_IMAGE_REJECTED":
+      return {
+        ...state,
+        isLoading: false,
+        isError: true,
+        msg: action.payload.response.data.msg,
+      };
+
+    // UPDATE USER PASSWORD
+    case "UPDATE_USER_PASSWORD_PENDING":
+      return {
+        ...state,
+        isLoading: true,
+        isError: false,
+        msg: "",
+      };
+
+    case "UPDATE_USER_PASSWORD_FULFILLED":
+      return {
+        ...state,
+        isLoading: false,
+        isError: false,
+        msg: action.payload.data.msg,
+      };
+
+    case "UPDATE_USER_PASSWORD_REJECTED":
+      return {
+        ...state,
+        isLoading: false,
+        isError: true,
+        msg: action.payload.response.data.msg,
+      };
+
     default: {
-      return { ...state };
+      return state;
     }
   }
-}
+};
+
+export default user;

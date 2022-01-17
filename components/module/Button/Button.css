@@ -1,0 +1,8 @@
+.button__component {
+  background-color: #6379f4;
+  padding: 16px 0px;
+  color: white;
+  border: none;
+  width: 100%;
+  border-radius: 12px;
+}

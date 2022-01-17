@@ -1,6 +1,19 @@
 import { combineReducers } from "redux";
-import user from "./user";
+import { persistReducer } from "redux-persist";
+import storage from "redux-persist/lib/storage";
 
-export default combineReducers({
+import user from "./user";
+import auth from "./auth";
+
+const persistConfig = {
+  key: "root",
+  storage,
+  whitelist: ["user"],
+};
+
+const rootReducer = combineReducers({
   user,
+  auth,
 });
+
+export default persistReducer(persistConfig, rootReducer);

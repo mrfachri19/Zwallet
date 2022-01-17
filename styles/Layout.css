@@ -1,0 +1,7 @@
+/* AUTH LAYOUT */
+.layout__overlay {
+  background-image: url("../public/assets/images/auth/background.png");
+  background-size: cover;
+  height: 150vh;
+  padding: 50px 20%;
+}

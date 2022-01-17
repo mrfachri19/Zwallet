@@ -1,17 +1,21 @@
-@import url(./components/auth.css);
-@import url(./components/formlogin.css);
-@import url(./components/navbar.css);
-@import url(./components/sidehome.css);
-@import url(./components/footer.css);
-@import url(./components/createpin.css);
+/* IMPORT ALL FILE CSS */
+@import "react-toastify/dist/ReactToastify.css";
 
-/*=========================================================*/
-@import url(./pages/signin.css);
-@import url(./pages/home.css);
-@import url(./pages/history.css);
-@import url(./pages/profile-user.css);
-@import url(./pages/personal-info.css);
-@import url(./pages/changepin.css);
+/* PAGE */
+@import url("../pages/auth/login/Login.css");
+@import url("../pages/auth/register/Register.css");
+@import url("../pages/auth/create-pin/CreatePin.css");
+@import url("../pages/auth/reset-password/ResetPassword.css");
+@import url("../pages/main/profile/change-pin/Pin.css");
+
+/* COMPONENT */
+@import url("../styles/Layout.css");
+
+@import url("../components/module/Input/Input.css");
+@import url("../components/module/Navbar/Navbar.css");
+@import url("../components/module/Sidebar/Sidebar.css");
+@import url("../components//module/FooterMobile/FooterMobile.css");
+@import url("../components/module/Button/Button.css");
 
 html,
 body {
@@ -26,6 +30,111 @@ a {
   text-decoration: none;
 }
 
-/* * {
+* {
   box-sizing: border-box;
-} */
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+}
+
+/* Firefox */
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+/* COSTUM */
+@import url("https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;600;700&display=swap");
+
+.nunito-400 {
+  font-family: "Nunito Sans", sans-serif;
+  font-weight: 400;
+}
+
+.nunito-600 {
+  font-family: "Nunito Sans", sans-serif;
+  font-weight: 600;
+}
+
+.nunito-700 {
+  font-family: "Nunito Sans", sans-serif;
+  font-weight: 700;
+}
+
+.font-primary {
+  color: #6379f4;
+}
+
+.font-black {
+  color: #3a3d42;
+}
+
+.font-secondary {
+  color: #3a3d42;
+  opacity: 80%;
+}
+
+.font-thrid {
+  color: #3a3d42;
+  opacity: 60%;
+}
+
+.color-primary {
+  background-color: #6379f4;
+}
+
+.link-none a {
+  text-decoration: none;
+  color: #3a3d42 !important;
+}
+
+.link-none-primary a {
+  text-decoration: none;
+  color: #6379f4 !important;
+}
+
+/* PAGINATION */
+
+.pagination {
+  margin: 15px auto;
+  display: flex;
+  list-style: none;
+  outline: none;
+  justify-content: center;
+}
+.pagination__disabled {
+  color: #7a7886;
+  border-color: #7a7886;
+}
+.pagination > .pagination__active > a {
+  background-color: #6379f4;
+  border-color: #6379f4;
+  color: #fff;
+}
+.pagination > li > a {
+  border: 1px solid #6379f4;
+  padding: 5px 10px;
+  outline: none;
+  cursor: pointer;
+}
+.pagination > .pagination__active > a,
+.pagination > .pagination__active > span,
+.pagination > .pagination__active > a:hover,
+.pagination > .pagination__active > span:hover,
+.pagination > .pagination__active > a:focus,
+.pagination > .pagination__active > span:focus {
+  background-color: #6379f4;
+  border-color: #6379f4;
+  outline: none;
+}
+.pagination > li > a,
+.pagination > li > span {
+  color: #6379f4;
+}
+.pagination > li:first-child > a,
+.pagination > li:first-child > span,
+.pagination > li:last-child > a,
+.pagination > li:last-child > span {
+  border-radius: unset;
+}
