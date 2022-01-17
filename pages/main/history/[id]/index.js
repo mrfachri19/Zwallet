@@ -31,7 +31,6 @@ export default function HistoryDetail(props) {
   const router = useRouter();
   const [history, setHistory] = useState([]);
 
-  // // GET USER
   const getHistoryById = () => {
     axios
       .get(`/transaction/history/${router.query.id}`)

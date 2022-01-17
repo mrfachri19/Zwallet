@@ -70,31 +70,6 @@ export default function PersonalInfo(props) {
     setLastName(e.target.value);
   };
 
-  const handleSubmit = () => {
-    setIsLoading(true);
-
-    dispatch(updateProfile(user.data.id, { noTelp: noTelp }))
-      .then((res) => {
-        setIsLoading(false);
-        handleCloseTelp();
-        dispatch(getUserProfile(user.data.id));
-      })
-      .catch((err) => {
-        setIsError({
-          status: true,
-          msg: err.response.data.msg,
-        });
-
-        setTimeout(() => {
-          setIsError({
-            status: false,
-            msg: "",
-          });
-        }, 3000);
-        setIsLoading(false);
-      });
-  };
-
   const handleSubmitFirstName = () => {
     setIsLoading(true);
 
@@ -127,6 +102,31 @@ export default function PersonalInfo(props) {
       .then((res) => {
         setIsLoading(false);
         handleCloseLastName();
+        dispatch(getUserProfile(user.data.id));
+      })
+      .catch((err) => {
+        setIsError({
+          status: true,
+          msg: err.response.data.msg,
+        });
+
+        setTimeout(() => {
+          setIsError({
+            status: false,
+            msg: "",
+          });
+        }, 3000);
+        setIsLoading(false);
+      });
+  };
+
+  const handleSubmit = () => {
+    setIsLoading(true);
+
+    dispatch(updateProfile(user.data.id, { noTelp: noTelp }))
+      .then((res) => {
+        setIsLoading(false);
+        handleCloseTelp();
         dispatch(getUserProfile(user.data.id));
       })
       .catch((err) => {

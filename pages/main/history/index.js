@@ -37,6 +37,24 @@ export default function Transfer(props) {
     filter: "WEEK",
   });
 
+  const history = () => {
+    axios
+      .get(
+        `/transaction/history?page=${filter.page}&limit=${filter.limit}&filter=${filter.filter}`
+      )
+      .then((res) => {
+        let temp = res.data.data.reverse();
+        setData(temp);
+        setPagination(res.data.pagination);
+        router.push(
+          `/history?page=${filter.page}&limit=${filter.limit}&filter=${filter.filter}`
+        );
+      })
+      .catch((err) => {
+        console.log(err.response);
+      });
+  };
+
   const changeFilter = (e) => {
     setFilter({
       ...filter,
@@ -53,25 +71,6 @@ export default function Transfer(props) {
         setPagination(res.data.pagination);
         router.push(
           `/history?page=${filter.page}&limit=${filter.limit}&filter=${e.target.value}`
-        );
-      })
-      .catch((err) => {
-        console.log(err.response);
-      });
-  };
-
-  // GET HISTORY
-  const history = () => {
-    axios
-      .get(
-        `/transaction/history?page=${filter.page}&limit=${filter.limit}&filter=${filter.filter}`
-      )
-      .then((res) => {
-        let temp = res.data.data.reverse();
-        setData(temp);
-        setPagination(res.data.pagination);
-        router.push(
-          `/history?page=${filter.page}&limit=${filter.limit}&filter=${filter.filter}`
         );
       })
       .catch((err) => {
