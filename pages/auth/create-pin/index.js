@@ -3,7 +3,7 @@ import axios from "utils/axios";
 import AuthLayout from "components/layouts/AuthLayout";
 import { Input, Button, ErrorHandling } from "components/module";
 import { getDataCookie } from "middleware/authorizationPage";
-import { PinSuccess } from "components/molecules";
+import { PinSuccess } from "components/homepage";
 import Cookie from "js-cookie";
 import { useRouter } from "next/router";
 import { Spinner } from "react-bootstrap";
