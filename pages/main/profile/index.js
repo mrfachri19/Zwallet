@@ -200,7 +200,7 @@ export default function Transfer(props) {
             className="nunito-400"
             style={{
               marginTop: "10px",
-              backgroundColor: "#FF5B37",
+              backgroundColor: "blue",
               padding: "10px 5px",
               color: "white",
               border: "none",

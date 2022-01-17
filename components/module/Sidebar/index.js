@@ -18,7 +18,7 @@ export default function Sidebar() {
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
 
-  // MODAL LOGOUT
+  // LOGOUT
   const [showLogout, setShowLogout] = useState(false);
 
   const handleCloseLogout = () => setShowLogout(false);
