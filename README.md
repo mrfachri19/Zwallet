@@ -1,11 +1,8 @@
 <div align="center">
   <h1> Zwallet </h1>
-  <div>
-    <a href="https://zwallet-pay.netlify.app"> zwallet </a>
-  </div>
   </div>
   
-  ## 
+  ## LINK Zwallet (https://zwallet-pay.netlify.app)
   
   ## Getting Started
 
